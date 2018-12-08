@@ -1,6 +1,3 @@
-
-# 1. [查看在线demo](https://wdd.js.org/vue-el-dashboard/#/)
-
 # 2. 初步教程
 
 [阅读第一部分文档](https://wdd.js.org/vue-vue-router-elementui-stupid-simple-dashboard.html)
