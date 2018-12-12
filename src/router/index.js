@@ -4,7 +4,17 @@ import menus from '@/config/menu-config'
 
 Vue.use(Router)
 
-var routes = []
+var routes = [
+  {
+    path: '/login',
+    name: 'login',
+    component: function (resolve) {
+      require(['@/page/login'], resolve)
+    }
+  }
+]
+
+
 
 menus.forEach((item) => {
   item.sub.forEach((sub) => {
@@ -15,5 +25,5 @@ menus.forEach((item) => {
     })
   })
 })
-
+console.log(routes)
 export default new Router({ routes })

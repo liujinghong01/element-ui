@@ -11,13 +11,13 @@
         text-color="#fff"
         active-text-color="#ffd04b">
 
-        <el-submenu class="over-hide" v-for="item in menu" :index="item.id" :key="item.id">
+        <el-submenu @click.native="openNav" class="over-hide" v-for="item in menu" :index="item.id" :key="item.id">
           <template slot="title">
             <icon :name="item.icon"></icon>
             <span v-text="item.name"></span>
           </template>
-          <el-menu-item-group class="over-hide" v-for="sub in item.sub" :key="sub.componentName">
-            <el-menu-item :index="sub.componentName" v-text="sub.name">
+          <el-menu-item-group  class="over-hide" v-for="sub in item.sub" :key="sub.componentName">
+            <el-menu-item  :index="sub.componentName" v-text="sub.name">
             </el-menu-item>
           </el-menu-item-group>
         </el-submenu>
@@ -45,12 +45,11 @@
     methods: {
       handleOpen (key, keyPath) {
         console.log(key, keyPath)
-        if(this.$store.state.isNav==0){
-          this.$store.commit('openNav')
-        }
       },
       handleClose (key, keyPath) {
         console.log(key, keyPath)
+      },
+      openNav(){
         if(this.$store.state.isNav==0){
           this.$store.commit('openNav')
         }
